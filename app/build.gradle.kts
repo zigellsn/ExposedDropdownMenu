@@ -18,7 +18,7 @@ plugins {
     id("com.android.library")
     id("kotlin-android")
     id("org.jetbrains.dokka") version "1.4.30"
-    maven
+    `maven-publish`
 }
 
 kotlin {
@@ -40,7 +40,10 @@ android {
     }
 
     buildTypes {
-        release {
+        getByName("debug") {
+            isTestCoverageEnabled = !project.hasProperty("android.injected.invoked.from.ide")
+        }
+        getByName("release") {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -92,4 +95,23 @@ val dokkaJar by tasks.creating(org.gradle.jvm.tasks.Jar::class) {
     description = "Assembles Kotlin docs with Dokka"
     archiveClassifier.set("javadoc")
     from(tasks.dokkaHtml)
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                from(components["release"])
+                groupId = "com.github.zigellsn.compose"
+                artifactId = "exposeddropdownmenu"
+                version = project.rootProject.ext["build_versions.version_name"] as String
+            }
+            create<MavenPublication>("debug") {
+                from(components["debug"])
+                groupId = "com.github.zigellsn.compose"
+                artifactId = "exposeddropdownmenu-debug"
+                version = project.rootProject.ext["build_versions.version_name"] as String
+            }
+        }
+    }
 }
