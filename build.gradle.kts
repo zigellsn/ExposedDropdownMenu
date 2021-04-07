@@ -16,8 +16,8 @@
 
 buildscript {
 
-    val versionMajor = 0
-    val versionMinor = 1
+    val versionMajor = 1
+    val versionMinor = 0
     val versionPatch = 0
     val versionId = "-alpha01"
 
@@ -46,7 +46,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:7.0.0-alpha12")
+        classpath("com.android.tools.build:gradle:7.0.0-alpha13")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${project.extra["kotlin_version"]}")
     }
 }
