@@ -26,6 +26,9 @@ kotlin {
     explicitApiWarning()
 }
 
+group = "com.github.zigellsn.compose"
+version = project.rootProject.ext["build_versions.version_name"] as String
+
 android {
     compileSdkVersion(project.rootProject.ext["build_versions.compile_sdk"] as Int)
     buildToolsVersion(project.rootProject.ext["build_versions.build_tools"] as String)
