@@ -19,7 +19,7 @@ buildscript {
     val versionMajor = 1
     val versionMinor = 0
     val versionPatch = 0
-    val versionId = "-alpha02"
+    val versionId = "-alpha05"
 
     extra.apply {
         set("build_versions.min_sdk", 24)
@@ -38,7 +38,7 @@ buildscript {
             "${versionMajor}.${versionMinor}.${versionPatch}${versionId}"
         )
         set("kotlin_version", "1.4.31")
-        set("compose_version", "1.0.0-beta03")
+        set("compose_version", "1.0.0-beta04")
     }
 
     repositories {
@@ -46,7 +46,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:7.0.0-alpha13")
+        classpath("com.android.tools.build:gradle:7.0.0-alpha14")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${project.extra["kotlin_version"]}")
     }
 }
