@@ -7,6 +7,23 @@ A exposed dropdown menu for Jetpack Compose
 
 ## Usage
 
+Add it to your build.gradle with:
+```gradle
+allprojects {
+    repositories {
+        maven { url "https://jitpack.io" }
+    }
+}
+```
+and:
+```gradle
+dependencies {
+    implementation 'com.github.zigellsn:exposeddropdownmenu:{latest version}'
+}
+```
+
+and use it like this:
+
 ```Kotlin
 @Composable
 fun ShowExposedDropdownMenu() {
