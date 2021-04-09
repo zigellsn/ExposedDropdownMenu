@@ -29,5 +29,6 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "ExposedDropdownMenu"
+rootProject.buildFileName = "build.gradle.kts"
 include(":app")
  

@@ -19,7 +19,7 @@ buildscript {
     val versionMajor = 1
     val versionMinor = 0
     val versionPatch = 0
-    val versionId = "-alpha05"
+    val versionId = "-alpha06"
 
     extra.apply {
         set("build_versions.min_sdk", 24)
