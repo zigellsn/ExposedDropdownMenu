@@ -1,9 +1,8 @@
 # Exposed Dropdown Menu for Jetpack Compose
 
-![Java CI](https://github.com/zigellsn/ExposedDropdownMenu/workflows/Java%20CI/badge.svg)
 [![Release](https://jitpack.io/v/zigellsn/ExposedDropdownMenu.svg)](https://jitpack.io/#zigellsn/ExposedDropdownMenu)
 
-A exposed dropdown menu for Jetpack Compose
+An exposed dropdown menu for Jetpack Compose
 
 ## Usage
 

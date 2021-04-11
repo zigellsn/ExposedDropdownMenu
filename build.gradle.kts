@@ -19,7 +19,7 @@ buildscript {
     val versionMajor = 1
     val versionMinor = 0
     val versionPatch = 0
-    val versionId = "-alpha06"
+    val versionId = "-alpha07"
 
     extra.apply {
         set("build_versions.min_sdk", 24)
@@ -37,7 +37,7 @@ buildscript {
             "build_versions.version_name",
             "${versionMajor}.${versionMinor}.${versionPatch}${versionId}"
         )
-        set("kotlin_version", "1.4.31")
+        set("kotlin_version", "1.4.32")
         set("compose_version", "1.0.0-beta04")
     }
 

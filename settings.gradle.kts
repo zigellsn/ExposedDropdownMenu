@@ -21,7 +21,7 @@ pluginManagement {
     }
 }
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    // repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
         mavenCentral()
@@ -30,5 +30,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "ExposedDropdownMenu"
 rootProject.buildFileName = "build.gradle.kts"
-include(":app")
+include(":lib")
  
