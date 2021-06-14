@@ -39,7 +39,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
-import androidx.compose.ui.focus.FocusState
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.focus.onFocusEvent
 import androidx.compose.ui.graphics.vector.ImageVector
@@ -256,7 +255,7 @@ internal fun <T> ExposedDropdownMenuLayout(
                 modifier = modifier
                     .testTag("edit_o")
                     .onFocusEvent {
-                        if (it == FocusState.Inactive)
+                        if (!it.isFocused)
                             onDismissRequest()
                     }
                     .focusRequester(focusRequester),
@@ -287,7 +286,7 @@ internal fun <T> ExposedDropdownMenuLayout(
                 modifier = modifier
                     .testTag("edit")
                     .onFocusEvent {
-                        if (it == FocusState.Inactive)
+                        if (!it.isFocused)
                             onDismissRequest()
                     }
                     .focusRequester(focusRequester),

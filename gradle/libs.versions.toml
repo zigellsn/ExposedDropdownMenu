@@ -1,0 +1,16 @@
+[versions]
+coroutine = "1.5.0"
+compose = "1.0.0-beta08"
+junit = "4.13.2"
+
+[libraries]
+kotlin_coroutine_core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutine" }
+kotlin_coroutine_android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutine" }
+
+compose_ui = { module = "androidx.compose.ui:ui", version.ref = "compose" }
+compose_tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
+compose_foundation = { module = "androidx.compose.foundation:foundation", version.ref = "compose" }
+compose_material_material = { module = "androidx.compose.material:material", version.ref = "compose" }
+
+test_compose = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "compose" }
+test_junit = { module = "junit:junit", version.ref = "junit" }

@@ -30,15 +30,12 @@ group = "com.github.zigellsn.compose"
 version = project.rootProject.ext["build_versions.version_name"] as String
 
 android {
-    compileSdkVersion(project.rootProject.ext["build_versions.compile_sdk"] as Int)
-    buildToolsVersion(project.rootProject.ext["build_versions.build_tools"] as String)
+    compileSdk = project.rootProject.ext["build_versions.compile_sdk"] as Int
 
     defaultConfig {
-        minSdkVersion(project.rootProject.ext["build_versions.min_sdk"] as Int)
-        targetSdkVersion(project.rootProject.ext["build_versions.target_sdk"] as Int)
-        versionCode(project.rootProject.ext["build_versions.version_code"] as Int)
-        versionName(project.rootProject.ext["build_versions.version_name"] as String)
-
+        minSdk = project.rootProject.ext["build_versions.min_sdk"] as Int
+        targetSdk = project.rootProject.ext["build_versions.target_sdk"] as Int
+        buildToolsVersion = project.rootProject.ext["build_versions.build_tools"] as String
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -60,7 +57,6 @@ android {
     }
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
-        useIR = true
     }
 
     packagingOptions.resources.excludes.apply {
@@ -80,18 +76,18 @@ android {
 }
 
 dependencies {
-    implementation("androidx.compose.ui:ui:${project.rootProject.ext["compose_version"]}")
-    implementation("androidx.compose.ui:ui-tooling:${project.rootProject.ext["compose_version"]}")
-    implementation("androidx.compose.foundation:foundation:${project.rootProject.ext["compose_version"]}")
-    implementation("androidx.compose.material:material:${project.rootProject.ext["compose_version"]}")
+    implementation(libs.compose.ui)
+    implementation(libs.compose.tooling)
+    implementation(libs.compose.foundation)
+    implementation(libs.compose.material.material)
 
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4:${project.rootProject.ext["compose_version"]}")
+    testImplementation(libs.test.junit)
+    androidTestImplementation(libs.test.compose)
 }
 
 val androidSourcesJar by tasks.creating(org.gradle.jvm.tasks.Jar::class) {
     archiveClassifier.set("sources")
-    from(android.sourceSets.getByName("main").java.srcDirs)
+    from(android.sourceSets.getByName("main").java.srcDirs())
 }
 
 tasks.build.configure {
