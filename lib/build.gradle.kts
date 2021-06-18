@@ -125,13 +125,13 @@ afterEvaluate {
 
                 repositories {
                     maven {
-                        name = "GithubPackages"
+                        name = "GitHubPackages"
                         url = uri("https://maven.pkg.github.com/zigellsn/ExposedDropdownMenu")
                         credentials {
                             username = System.getenv("GITHUB_USER")
-                                ?: project.properties["GITHUB_USER"] as String? ?: ""
+                                ?: project.findProperty("gpr.user") as String? ?: ""
                             password = System.getenv("GITHUB_PERSONAL_ACCESS_TOKEN")
-                                ?: project.properties["GITHUB_PERSONAL_ACCESS_TOKEN"] as String?
+                                ?: project.findProperty("gpr.key") as String?
                                         ?: ""
                         }
                     }
@@ -172,13 +172,13 @@ afterEvaluate {
 
                 repositories {
                     maven {
-                        name = "GithubPackages"
+                        name = "GitHubPackagesDebug"
                         url = uri("https://maven.pkg.github.com/zigellsn/ExposedDropdownMenu")
                         credentials {
                             username = System.getenv("GITHUB_USER")
-                                ?: project.properties["GITHUB_USER"] as String? ?: ""
+                                ?: project.findProperty("gpr.user") as String? ?: ""
                             password = System.getenv("GITHUB_PERSONAL_ACCESS_TOKEN")
-                                ?: project.properties["GITHUB_PERSONAL_ACCESS_TOKEN"] as String?
+                                ?: project.findProperty("gpr.key") as String?
                                         ?: ""
                         }
                     }
