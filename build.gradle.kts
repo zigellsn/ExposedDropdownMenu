@@ -38,7 +38,7 @@ buildscript {
             "${versionMajor}.${versionMinor}.${versionPatch}${versionId}"
         )
         set("kotlin_version", "1.5.10")
-        set("compose_version", "1.0.0-beta08")
+        set("compose_version", "1.0.0-beta09")
     }
 
     repositories {
@@ -46,7 +46,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:7.0.0-beta03")
+        classpath("com.android.tools.build:gradle:7.0.0-beta04")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${project.extra["kotlin_version"]}")
     }
 }
