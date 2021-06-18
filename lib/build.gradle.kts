@@ -87,7 +87,7 @@ dependencies {
 
 val androidSourcesJar by tasks.creating(org.gradle.jvm.tasks.Jar::class) {
     archiveClassifier.set("sources")
-    from(android.sourceSets.getByName("main").java.srcDirs())
+    from(android.sourceSets.getByName("main").java.srcDirs().toString())
 }
 
 tasks.build.configure {
