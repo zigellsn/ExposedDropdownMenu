@@ -1,5 +1,10 @@
 # Exposed Dropdown Menu for Jetpack Compose
 
+---
+- **This project is deprecated!**
+- **Use [this](https://developer.android.com/reference/kotlin/androidx/compose/material/package-summary#ExposedDropdownMenuBox(kotlin.Boolean,kotlin.Function1,androidx.compose.ui.Modifier,kotlin.Function1)) instead.**
+---
+
 [![Release](https://jitpack.io/v/zigellsn/ExposedDropdownMenu.svg)](https://jitpack.io/#zigellsn/ExposedDropdownMenu)
 
 An exposed dropdown menu for Jetpack Compose
